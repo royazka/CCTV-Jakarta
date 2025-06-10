@@ -1,56 +1,76 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live CCTV Jakarta</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live CCTV Jakarta - Royazka</title>
   <style>
     body {
       background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
+      text-align: center;
       margin: 0;
-      padding: 0;
+      padding: 20px;
     }
-    header {
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cctv-feed {
       background-color: #111;
-      padding: 1rem;
-      text-align: center;
-      font-size: 1.5rem;
+      padding: 10px;
+      border-radius: 10px;
     }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
+
+    .cctv-feed img {
+      width: 100%;
+      border-radius: 8px;
     }
-    iframe {
-      border: none;
-      width: 90%;
-      max-width: 800px;
-      height: 450px;
-      margin-bottom: 2rem;
+
+    .cctv-title {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1.1em;
     }
-    h2 {
-      text-align: center;
-      margin-bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    Live CCTV Jakarta - Royazka
-  </header>
-  <div class="container">
-    <h2>CCTV Pondok Pinang 1</h2>
-    <iframe src="https://cctv.balitower.co.id/Pondok-Pinang-006-705485_4/embed.html" allowfullscreen></iframe>
 
-    <h2>CCTV Pondok Pinang 2</h2>
-    <iframe src="https://cctv.balitower.co.id/Pondok-Pinang-006-705485_2/embed.html" allowfullscreen></iframe>
+  <h1>Live CCTV Jakarta - Royazka</h1>
 
-    <h2>CCTV Petamburan</h2>
-    <iframe src="https://cctv.balitower.co.id/Petamburan-006-700269_2/embed.html" allowfullscreen></iframe>
+  <div class="grid-container">
+    <div class="cctv-feed">
+      <img src="URL-GAMBAR-1" alt="CCTV Pondok Pinang 1">
+      <div class="cctv-title">CCTV Pondok Pinang 1</div>
+    </div>
+    <div class="cctv-feed">
+      <img src="URL-GAMBAR-2" alt="CCTV Pondok Pinang 2">
+      <div class="cctv-title">CCTV Pondok Pinang 2</div>
+    </div>
+    <div class="cctv-feed">
+      <img src="URL-GAMBAR-3" alt="CCTV Petamburan">
+      <div class="cctv-title">CCTV Petamburan</div>
+    </div>
+    <div class="cctv-feed">
+      <div style="color: gray; padding: 30px;">Slot Kosong / Bisa Tambah CCTV atau Logo</div>
+    </div>
   </div>
+
 </body>
 </html>
