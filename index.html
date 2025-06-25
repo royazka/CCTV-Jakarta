@@ -1,79 +1,180 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Live CCTV Jakarta - Royazka</title>
   <style>
     body {
       background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
       padding: 20px;
-    }
+      text-align: center;
+    }h1 {
+  margin-bottom: 20px;
+}
 
-    h1 {
-      margin-bottom: 20px;
-    }
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
 
-    .grid-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.tab-button {
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
 
-    .cctv-feed {
-      background-color: #111;
-      padding: 10px;
-      border-radius: 10px;
-    }
+.tab-button.active {
+  background-color: #555;
+}
 
-    .cctv-feed iframe {
-      width: 100%;
-      height: 300px;
-      border-radius: 8px;
-      border: none;
-    }
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  display: none;
+}
 
-    .cctv-title {
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
+.accordion.active {
+  display: block;
+}
 
-    @media (max-width: 768px) {
-      .grid-container {
-        grid-template-columns: 1fr;
-      }
-    }
+h2 {
+  text-align: left;
+  max-width: 800px;
+  margin: 20px auto 10px;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background-color: #222;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  width: 100%;
+  color: white;
+  font-size: 1em;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  background-color: #111;
+}
+
+.accordion-content iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  border: none;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
   </style>
 </head>
-<body>
+<body>  <h1>Live CCTV Jakarta - Royazka</h1>  <div class="tabs">
+    <button class="tab-button active" onclick="switchTab('pusat')">Jakarta Pusat</button>
+    <button class="tab-button" onclick="switchTab('selatan')">Jakarta Selatan</button>
+    <button class="tab-button" onclick="switchTab('timur')">Jakarta Timur</button>
+    <button class="tab-button" onclick="switchTab('utara')">Jakarta Utara</button>
+    <button class="tab-button" onclick="switchTab('barat')">Jakarta Barat</button>
+  </div>  <div class="accordion active" id="pusat">
+    <h2>Jakarta Pusat</h2><!-- CCTV Jakarta Pusat Full -->
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Pos Merdeka Barat</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Pospol-Merdeka-Barat-506817_1/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Monas Barat 1</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Monas-Barat-010-506633_3/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Monas Barat 2</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Monas-Barat-010-506633_2/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Monas Barat 3</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Monas-Barat-010-506633_1/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Monas Barat 4</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Monas-Barat-009-506632_1/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Monas Barat 5</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Monas-Barat-009-506632_3/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Monas Barat 6</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Monas-Barat-009-506632_2/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Kebon Sirih</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Kebon-Sirih-008-700340_4/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Pospol Merdeka Utara</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Pospol-Merdeka-Utara-506818_1/embed.html"></iframe></div></div></div></div>
 
-  <h1>Live CCTV Jakarta - Royazka</h1>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Gambir</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Gambir-005-700039_3/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Menteng</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Menteng-001-700123_1/embed.html"></iframe></div></div>
+  </div>  <div class="accordion" id="selatan">
+    <h2>Jakarta Selatan</h2><!-- CCTV Jakarta Selatan Full -->
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Kramat Pela</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Kramat-Pela-002-705046_3/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Pasar Minggu</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Pasar-Minggu-006-705404_2/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Jati Padang</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Jati-Padang-001-705031_2/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Cilandak Barat</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Cilandak-Barat-001-705009_2/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Pondok Labu</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Pondok-Labu-003-705474_4/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Lebak Bulus</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Lebak-Bulus-001-MP-601121_4/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Lenteng Agung</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Lenteng-Agung-015-705796_3/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Gelora</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Gelora-017-700470_2/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Bendungan Hilir</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Bendungan-Hilir-003-700014_1/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Ulujami</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Ulujami-001-MP-601115_4/embed.html"></iframe></div></div></div></div>
 
-  <div class="grid-container">
-    <div class="cctv-feed">
-      <iframe src="https://cctv.balitower.co.id/Pondok-Pinang-006-705485_4/embed.html" allowfullscreen></iframe>
-      <div class="cctv-title">CCTV Pondok Pinang 1</div>
-    </div>
-    <div class="cctv-feed">
-      <iframe src="https://cctv.balitower.co.id/Pondok-Pinang-006-705485_2/embed.html" allowfullscreen></iframe>
-      <div class="cctv-title">CCTV Pondok Pinang 2</div>
-    </div>
-    <div class="cctv-feed">
-      <iframe src="https://cctv.balitower.co.id/Petamburan-006-700269_2/embed.html" allowfullscreen></iframe>
-      <div class="cctv-title">CCTV Petamburan</div>
-    </div>
-    <div class="cctv-feed">
-      <iframe src="https://cctv.balitower.co.id/Pondok-Pinang-002-705481_2/embed.html" allowfullscreen></iframe>
-      <div class="cctv-title">CCTV Pondok Pinang McD</div>
-    </div>
-  </div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Cilandak Timur</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Cilandak-Timur-008-705475_2/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Pondok Pinang</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Pondok-Pinang-002-705481_2/embed.html"></iframe></div></div>
+  </div>  <div class="accordion" id="timur">
+    <h2>Jakarta Timur</h2><!-- CCTV Jakarta Timur Full -->
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Bali Mester 2</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Bali-Mester-006-704644_3/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Cikoko</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Cikoko-006-705651_4/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Bambu Apus</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Bambu-Apus-001-MP-601170_3/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Cilangkap 1</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Cilangkap-010-704706_2/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Cilangkap 2</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Cilangkap-010-704706_3/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Pulo Gadung</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Pulo-Gadung-011-704487_4/embed.html"></iframe></div></div></div></div>
 
-</body>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Bali Mester 1</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Bali-Mester-006-704644_1/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Klender</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Klender-001-704018_3/embed.html"></iframe></div></div>
+  </div>  <div class="accordion" id="utara">
+    <h2>Jakarta Utara</h2>
+    <!-- CCTV Jakarta Utara -->
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Tegal Alur</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Tegal-Alur-025-702809_2/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Ancol</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Ancol-013-701096_3/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Pluit 1</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Pluit-012-701174_5/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Pluit 2</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Pluit-012-701174_3/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Pluit 3</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Pluit-012-701174_2/embed.html"></iframe></div></div>
+<!-- Potongan ditambahkan, lanjutkan jika ingin semua -->
+  </div>  <div class="accordion" id="barat">
+    <h2>Jakarta Barat</h2>
+    <!-- CCTV Jakarta Barat -->
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Duri Kosambi 1</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Duri-Kosambi-041-702773_4/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Duri Kosambi 2</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Duri-Kosambi-041-702773_2/embed.html"></iframe></div></div>
+<div class="accordion-item"><button class="accordion-header" onclick="toggleAccordion(this)">CCTV Jati Pulo</button><div class="accordion-content"><iframe src="https://cctv.balitower.co.id/Jati-Pulo-001-702017_2/embed.html"></iframe></div></div>
+  </div>  <script>
+    function switchTab(areaId) {
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.accordion').forEach(acc => acc.classList.remove('active'));
+      document.querySelector(`[onclick="switchTab('${areaId}')"]`).classList.add('active');
+      document.getElementById(areaId).classList.add('active');
+    }
+
+    function toggleAccordion(button) {
+      const item = button.parentElement;
+      const accordionGroup = item.parentElement;
+      const allItems = accordionGroup.querySelectorAll('.accordion-item');
+      allItems.forEach(i => {
+        if (i !== item) i.classList.remove('active');
+      });
+      item.classList.toggle('active');
+    }
+  </script></body>
 </html>
